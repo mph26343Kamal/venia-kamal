@@ -1,0 +1,214 @@
+.product-carousel {
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+.product-carousel .carousel-slides-container {
+  position: relative;
+}
+
+.product-carousel .carousel-slides,
+.product-carousel .carousel-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-carousel .carousel-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll hidden;
+}
+
+.product-carousel .carousel-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.product-carousel .carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.product-carousel .product-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.product-carousel .product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+}
+
+.product-carousel .product-image {
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.product-carousel .product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.product-carousel .product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-carousel .product-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product-carousel .product-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.product-carousel .product-price {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.product-carousel .product-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.product-carousel .view-details {
+  color: #f8f8f8;
+  text-decoration: none;
+  font-weight: 500;
+  background-color: #4040ff;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+}
+
+/* .product-carousel .view-details:hover {
+  text-decoration: underline;
+} */
+
+.product-carousel .like-button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.product-carousel .like-button:hover {
+  transform: scale(1.1);
+}
+
+.product-carousel .heart-icon {
+  fill: none;
+  stroke: #666;
+  stroke-width: 2;
+  transition: fill 0.2s;
+}
+
+.product-carousel .like-button.active .heart-icon {
+  fill: #ff4040;
+  stroke: #ff4040;
+}
+
+.product-carousel .carousel-slide-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.product-carousel .carousel-slide-indicator button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s;
+}
+
+.product-carousel .carousel-navigation-buttons button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.product-carousel .carousel-slide-indicator button:disabled {
+  background-color: #4040ff;
+}
+
+.product-carousel .carousel-navigation-buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: none;
+  justify-content: space-between;
+  pointer-events: none;
+  padding: 0 1rem;
+}
+
+
+.product-carousel .carousel-navigation-buttons button:hover {
+  background-color: #f5f5f5;
+}
+
+.product-carousel .slide-prev::before,
+.product-carousel .slide-next::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border: 2px solid #666;
+  border-right: 0;
+  border-bottom: 0;
+  transform: rotate(-45deg);
+  display: block;
+}
+
+.product-carousel .slide-next::before {
+  transform: rotate(135deg);
+}
+
+@media (width <= 1024px) {
+  .product-carousel .carousel-slide {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width <= 768px) {
+  .product-carousel .carousel-slide {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 480px) {
+  .product-carousel .carousel-slide {
+    grid-template-columns: 1fr;
+  }
+}
