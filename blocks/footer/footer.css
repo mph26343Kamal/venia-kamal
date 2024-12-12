@@ -3,7 +3,7 @@ footer {
   font-size: var(--body-font-size-xs);
 }
 
-footer .footer > div {
+footer .footer>div {
   margin: auto;
   max-width: 1200px;
   padding: 40px 24px 24px;
@@ -13,8 +13,57 @@ footer .footer p {
   margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
+footer .footer>div .default-content-wrapper>ul {
+  list-style: none;
+  font-size: var(--body-font-size-xs);
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgb(209 213 219);
+  padding: 1rem;
+}
+
+footer .footer>div .default-content-wrapper>ul>li {
+  font-weight: 600;
+  flex: 1;
+  margin-right: 1rem;
+}
+
+footer .footer>div .default-content-wrapper>ul>li>ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: var(--body-font-size-xs);
+}
+
+footer .footer>div .default-content-wrapper>ul>li>ul>li {
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+footer .footer>div .default-content-wrapper>ul>li>ul>li span{
+ margin-right: 1rem;
+}
+
+.copyright-footer .default-content-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem 0;
+}
+
+.copyright-footer .default-content-wrapper img {
+  height: 18px;
+  width: 102px;
+}
+
+footer .footer>div .default-content-wrapper>ul>li:last-child>ul>li:last-child{
+  border: 2px solid black;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-align: end;
+}
+
+@media (width >=900px) {
+  footer .footer>div {
     padding: 40px 32px 24px;
   }
 }

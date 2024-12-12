@@ -136,7 +136,7 @@ export default async function decorate(block) {
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-      navSection.addEventListener('click', () => {
+      navSection.addEventListener('mouseenter', () => {
         if (isDesktop.matches) {
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
           toggleAllNavSections(navSections);
@@ -162,5 +162,19 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
+
+  const topNav = document.createElement('div');
+  topNav.className = 'top-nav';
+  block.prepend(topNav);
+  topNav.innerHTML = '<div class="nav-store"><span>Main Website Store - Default Store View</span><span >|</span><span class="nav-currency">$ USD</span></div>';
   block.append(navWrapper);
 }
+
+window.onscroll = function hideTopNav() {
+  const header = document.querySelector('.top-nav');
+  if (window.pageYOffset > 20) {
+    header?.classList.add('reduce-nav');
+  } else {
+    header?.classList.remove('reduce-nav');
+  }
+};

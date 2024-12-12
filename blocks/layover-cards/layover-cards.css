@@ -1,0 +1,39 @@
+.layover-cards > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.layover-cards > ul > li {
+  position: relative;
+}
+
+.layover-cards .cards-card-body {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--light-color);
+}
+
+.layover-cards .cards-card-body h2{
+ font-size: 2rem;
+}
+
+.layover-cards .cards-card-body p{
+  font-size: 1rem;
+ }
+
+
+.layover-cards .cards-card-image {
+  line-height: 0;
+}
+
+.layover-cards > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}

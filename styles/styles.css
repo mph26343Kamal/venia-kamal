@@ -26,7 +26,7 @@
   /* body sizes */
   --body-font-size-m: 22px;
   --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  --body-font-size-xs: 16px;
 
   /* heading sizes */
   --heading-font-size-xxl: 55px;
@@ -142,6 +142,10 @@ pre {
   white-space: pre;
 }
 
+main{
+  padding-top: 68px;
+}
+
 main > div {
   margin: 40px 16px;
 }
@@ -166,7 +170,8 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link,
+
+/* a.button:any-link,
 button {
   box-sizing: border-box;
   display: inline-block;
@@ -187,15 +192,15 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
+} */
 
-a.button:hover,
+/* a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
-}
+} */
 
 button:disabled,
 button:disabled:hover {
