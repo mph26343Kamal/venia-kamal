@@ -37,7 +37,7 @@ function createProductCard(product) {
 }
 
 function updateActiveSlide(slide) {
-  const block = slide.closest('.product-carousel');
+  const block = slide.closest('.card-carousel');
   const slideIndex = parseInt(slide.dataset.slideIndex, 10);
   block.dataset.activeSlide = slideIndex;
 
@@ -152,7 +152,7 @@ export default async function decorate(block) {
   const productSlides = chunkArray(products, PRODUCTS_PER_SLIDE);
   const isSingleSlide = productSlides.length < 2;
 
-  block.classList.add('product-carousel');
+  block.classList.add('card-carousel');
   block.setAttribute('role', 'region');
   block.setAttribute('aria-roledescription', 'Product Carousel');
 
